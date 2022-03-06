@@ -39,5 +39,4 @@ public class computer implements Serializable {
         this.hinh = hinh;
     }
 
-    // add comment
 }
