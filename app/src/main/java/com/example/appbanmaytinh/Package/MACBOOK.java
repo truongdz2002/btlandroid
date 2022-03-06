@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appbanmaytinh.MainActivity;
 import com.example.appbanmaytinh.R;
+import com.example.appbanmaytinh.computer.adapter.compurteradapter;
 import com.example.appbanmaytinh.computer.adapter.computeradapter2;
 import com.example.appbanmaytinh.computer.computer;
 
@@ -35,7 +36,13 @@ public class MACBOOK extends Fragment {
         Context context;
         GridLayoutManager gridLayoutManager2=new GridLayoutManager(nmainActivity, 1);
         lv3.setLayoutManager(gridLayoutManager2);
-        computeradapter2 adapter2 =new computeradapter2(getlist2computer());
+        computeradapter2 adapter2 =new computeradapter2(getlist2computer(), new compurteradapter.ItemClick() {
+            @Override
+            public void onclickItem(computer computer) {
+                nmainActivity.gotoDetailFragmet(computer);
+
+            }
+        });
         lv3.setAdapter(adapter2);
         RecyclerView.ItemDecoration itemDecoration=new DividerItemDecoration(nmainActivity,DividerItemDecoration.VERTICAL);
         lv3.addItemDecoration(itemDecoration);

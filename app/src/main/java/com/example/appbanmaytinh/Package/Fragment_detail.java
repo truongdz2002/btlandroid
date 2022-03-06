@@ -15,24 +15,11 @@ import com.example.appbanmaytinh.computer.computer;
 import com.example.appbanmaytinh.R;
 
 public class Fragment_detail extends Fragment {
-  private  ImageView sp;
+    private  ImageView sp;
     private  TextView tv3;
     private  TextView tv4;
     private Button take;
     private View view;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public Fragment_detail() {
 
@@ -67,4 +54,6 @@ public class Fragment_detail extends Fragment {
 
 
     }
+
+
 }

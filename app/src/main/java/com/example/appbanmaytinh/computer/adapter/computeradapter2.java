@@ -18,9 +18,15 @@ import java.util.List;
 public class computeradapter2 extends RecyclerView.Adapter<computeradapter2.computer2ViewHolder>{
     private Context ncontext;
     private List<computer> list2computer;
+    private compurteradapter.ItemClick itemClick;
+    public interface ItemClick{
+        void onclickItem(computer computer);
+    }
 
-    public computeradapter2( List<computer> list2computer) {
+
+    public computeradapter2(List<computer> list2computer, compurteradapter.ItemClick listener) {
         this.list2computer = list2computer;
+        this.itemClick=listener;
 
     }
     public computeradapter2(){
@@ -46,9 +52,28 @@ public class computeradapter2 extends RecyclerView.Adapter<computeradapter2.comp
          {
              return;
          }
-         holder.pc1.setImageResource(computer.getHinh());
-         holder.tv1.setText(computer.getTenpc());
-         holder.tv2.setText(computer.getGiapc());
+        holder.pc1.setImageResource(computer.getHinh());
+        holder.pc1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemClick.onclickItem(computer);
+            }
+        });
+        holder.tv1.setText(computer.getTenpc());
+        holder.tv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemClick.onclickItem(computer);
+            }
+        });
+        holder.tv2.setText(computer.getGiapc());
+        holder.tv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemClick.onclickItem(computer);
+            }
+        });
+
     }
 
     @Override
