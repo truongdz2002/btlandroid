@@ -38,4 +38,6 @@ public class computer implements Serializable {
     public void setHinh(int hinh) {
         this.hinh = hinh;
     }
+
+    // add comment
 }
