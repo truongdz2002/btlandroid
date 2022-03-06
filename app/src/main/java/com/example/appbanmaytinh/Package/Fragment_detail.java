@@ -20,6 +20,16 @@ public class Fragment_detail extends Fragment {
     private  TextView tv4;
     private Button take;
     private View view;
+    private Button bt;
+
+
+
+
+
+
+
+
+
 
 
 
