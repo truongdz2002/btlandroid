@@ -43,16 +43,17 @@
             android:text="Giá:  14000000"
             android:textSize="20dp"
             android:textColor="#FF0000"/>
+
         <Button
             android:id="@+id/bttake"
             android:layout_width="120dp"
-            android:layout_height="45dp"
-            android:layout_toRightOf="@+id/sp"
+            android:layout_height="48dp"
             android:layout_below="@id/tv4"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button"
             android:layout_marginStart="10dp"
-            android:text="Take"/>
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/sp"
+            android:background="@drawable/button"
+            android:text="Take" />
         <EditText
             android:id="@+id/gioithieu"
             android:gravity="start"

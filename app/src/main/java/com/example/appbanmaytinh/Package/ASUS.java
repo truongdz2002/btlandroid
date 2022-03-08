@@ -23,10 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ASUS extends Fragment {
- private View view;
- private MainActivity nmainActivity;
- private computeradapter2 adapter2;
- private RecyclerView lv1;
+    private View view;
+    private MainActivity nmainActivity;
+    private computeradapter2 adapter2;
+    private RecyclerView lv1;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

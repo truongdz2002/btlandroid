@@ -13,26 +13,26 @@ import com.example.appbanmaytinh.Package.ASUS;
 import com.example.appbanmaytinh.Package.DELL;
 import com.example.appbanmaytinh.Package.Fragment_detail;
 import com.example.appbanmaytinh.Package.MACBOOK;
-import com.example.appbanmaytinh.computer.adapter.compurteradapter;
+import com.example.appbanmaytinh.Package.gio_hang;
 
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
-import android.widget.GridView;
+import android.widget.EditText;
 
 import com.example.appbanmaytinh.Package.home;
 import com.example.appbanmaytinh.computer.computer;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
     private static final int FRAGMENT_HOME=0;
     private static final int FRAGMENT_ASUS=1;
     private static final int FRAGMENT_DELL=2;
     private static final int FRAGMENT_MACBOOK=3;
+    private static final int FRAGMENT_GIOHANG=4;
     private DrawerLayout mDrawerLayout;
+    EditText account;
     private int mCurrentFragment=FRAGMENT_HOME;
 
     @Override
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         navigationView.setNavigationItemSelectedListener(this);
         replaceFragment(new home());
         navigationView.getMenu().findItem(R.id.home).setChecked(true);
+
 
     }
     @Override
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
             {
                 replaceFragment(new ASUS());
                 mCurrentFragment=FRAGMENT_ASUS;
+
             }
         }
         else if(id==R.id.DELL)
@@ -78,13 +80,23 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
             {
                 replaceFragment(new DELL());
                 mCurrentFragment=FRAGMENT_DELL;
+
             }
-        }       else if(id==R.id.MACBOOK)
+        }
+        else if(id==R.id.MACBOOK)
         {
             if(mCurrentFragment!=FRAGMENT_MACBOOK)
             {
                 replaceFragment(new MACBOOK());
                 mCurrentFragment=FRAGMENT_MACBOOK;
+
+            }
+        }
+        else if(id==R.id.G) {
+            if (mCurrentFragment != FRAGMENT_GIOHANG) {
+                replaceFragment(new gio_hang());
+                mCurrentFragment = FRAGMENT_GIOHANG;
+
             }
         }
         mDrawerLayout.closeDrawer(Gravity.START);
@@ -110,14 +122,41 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         transaction.commit();
     }
     public void gotoDetailFragmet(computer computer)
-    {
-       FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+    {   FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         Fragment_detail fragment_detail=new Fragment_detail();
         Bundle bundle=new Bundle();
         bundle.putSerializable("Anh",computer);
         fragment_detail.setArguments(bundle);
         fragmentTransaction.replace(R.id.content,fragment_detail);
         fragmentTransaction.commit();
+       /* MainActivitydetail mainActivitydetail=new MainActivitydetail();
+        Bundle bundle=new Bundle();
+        bundle.putSerializable("Anh",computer);
+        mainActivitydetail.set*/
+
     }
+    /*public void setTitleToolbar()
+    {
+        String titile="";
+        switch (mCurrentFragment)
+        {
+            case FRAGMENT_HOME :
+                break;
+            case FRAGMENT_ASUS:
+                titile=getString(R.string.ASUS);
+                break;
+            case FRAGMENT_DELL:
+                titile=getString(R.string.DELL);
+                break;
+            case FRAGMENT_MACBOOK:
+                titile=getString(R.string.MACBOOK);
+                break;
+
+        }
+        if(getSupportActionBar() !=null)
+        {
+            getSupportActionBar().setTitle(titile);
+        }
+    }*/
 
 }

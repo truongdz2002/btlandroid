@@ -40,7 +40,6 @@ public class MACBOOK extends Fragment {
             @Override
             public void onclickItem(computer computer) {
                 nmainActivity.gotoDetailFragmet(computer);
-
             }
         });
         lv3.setAdapter(adapter2);

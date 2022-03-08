@@ -21,12 +21,10 @@ public class Fragment_detail extends Fragment {
     private Button take;
     private View view;
 
+
     public Fragment_detail() {
 
     }
-
-
-
 
 
     @Override
@@ -38,6 +36,12 @@ public class Fragment_detail extends Fragment {
         tv4=view.findViewById(R.id.tv4);
         take=view.findViewById(R.id.bttake);
         sp=view.findViewById(R.id.sp);
+        take.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendcart();
+            }
+        });
         Bundle bundle=getArguments();
         if(bundle!=null)
         {
@@ -54,6 +58,11 @@ public class Fragment_detail extends Fragment {
 
 
     }
+    public void sendcart()
+    {
+
+    }
+
 
 
 }

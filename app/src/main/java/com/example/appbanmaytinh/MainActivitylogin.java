@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.appbanmaytinh.database.database;
 
 public class MainActivitylogin extends AppCompatActivity {
     Button login;
+    EditText gmail;
     private long back;
 
     @Override
@@ -19,6 +21,7 @@ public class MainActivitylogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activitylogin);
         login = findViewById(R.id.login);
+        gmail=findViewById(R.id.gmail);
         /*database db=new database(this);
         db.Open();*/
         login.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +32,7 @@ public class MainActivitylogin extends AppCompatActivity {
             }
         });
     }
-
+//
     @Override
     public void onBackPressed() {
         if (back + 2000 > System.currentTimeMillis()) {

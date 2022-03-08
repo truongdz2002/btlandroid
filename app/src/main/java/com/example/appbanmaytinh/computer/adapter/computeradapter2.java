@@ -41,17 +41,17 @@ public class computeradapter2 extends RecyclerView.Adapter<computeradapter2.comp
     @Override
     public computer2ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-       View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.item_computer, parent, false);
+        View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.item_computer, parent, false);
         return new computer2ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull computer2ViewHolder holder, int position) {
         final computer computer=list2computer.get(position);
-         if(computer==null)
-         {
-             return;
-         }
+        if(computer==null)
+        {
+            return;
+        }
         holder.pc1.setImageResource(computer.getHinh());
         holder.pc1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +73,6 @@ public class computeradapter2 extends RecyclerView.Adapter<computeradapter2.comp
                 itemClick.onclickItem(computer);
             }
         });
-
     }
 
     @Override
