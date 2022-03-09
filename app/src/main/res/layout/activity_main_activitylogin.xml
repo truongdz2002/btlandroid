@@ -39,7 +39,7 @@
             android:layout_height="48dp"
             android:layout_margin="3dp"
             android:ems="6"
-            android:hint="Pass world"
+            android:hint="Password"
             android:inputType="textPassword"
             android:textSize="20dp" />
 
