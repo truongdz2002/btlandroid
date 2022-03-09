@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:title="Giỏ hàng"
+        android:background="#3366FF"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lv4"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:textSize="20dp"
+        android:textColor="#CC0000"
+        android:gravity="center"
+        android:text="Tổng tiền:"
+        android:background="@drawable/button"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:text="Thanh toán sản phẩm "
+        android:background="@drawable/button"/>
+
+
+</LinearLayout>
