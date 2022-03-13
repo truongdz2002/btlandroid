@@ -9,10 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.appbanmaytinh.Package.RegisterActivity;
 import com.example.appbanmaytinh.database.database;
 
 public class MainActivitylogin extends AppCompatActivity {
-    Button login;
+    Button login,register;
     EditText gmail;
     private long back;
 
@@ -21,6 +22,7 @@ public class MainActivitylogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activitylogin);
         login = findViewById(R.id.login);
+        register = findViewById(R.id.Register);
         gmail=findViewById(R.id.gmail);
         /*database db=new database(this);
         db.Open();*/
@@ -28,6 +30,14 @@ public class MainActivitylogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivitylogin.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivitylogin.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
